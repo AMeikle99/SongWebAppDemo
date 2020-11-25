@@ -3,11 +3,12 @@ import { Song } from './interfaces/songInterfaces'
 
 export default class AWSHelper {
 
-	private SONG_API_URL = 'https://x9oc11k16f.execute-api.eu-west-2.amazonaws.com/development/song'
+	private SONG_API_URL = process.env.API_URL || ''
 	
 	getAllSongs = async () => {
 		const response = await axios.get(this.SONG_API_URL)
 		console.log(response)
+		console.log(this.SONG_API_URL)
 		const songList = this.modelSongResponse(response)
 		return songList
 	}
