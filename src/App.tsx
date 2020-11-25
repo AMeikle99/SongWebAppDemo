@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import SongTable from './components/SongTable';
+import AddSongForm from './components/AddSongForm';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='text-center mt-3'>
+        <h1>AWS Simple Web App Demo</h1>
+        <h5 className='mt-5'>Below is a Table of Songs loaded from a DynamoDB Table from AWS</h5>
+        <h5>The data is requested via API Gateway</h5>
+        <h5>This Web Server is hosted using S3</h5>
+      </div>
+      <div className='col-6 mx-auto'>
+        <SongTable/>
+      </div>
+      <div className='col-5 mx-auto mt-5'>
+        <AddSongForm/>
+      </div>
     </div>
   );
 }
