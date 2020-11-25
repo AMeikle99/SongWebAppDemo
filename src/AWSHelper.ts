@@ -3,7 +3,7 @@ import { Song } from './interfaces/songInterfaces'
 
 export default class AWSHelper {
 
-	private SONG_API_URL = process.env.API_URL || ''
+	private SONG_API_URL = process.env.REACT_APP_API_URL || ''
 	
 	getAllSongs = async () => {
 		const response = await axios.get(this.SONG_API_URL)
